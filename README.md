@@ -1,68 +1,115 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Template Admin Portal - Star Wars Edition
 
-## Available Scripts
+This is a template admin portal that makes use of React, AntD, React Hooks and Redux.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* [Component Libraries](#component-libraries)
+* [Basic usage](#basic-usage)
+* [Build](#build)
+* [Structure](#structure)
+* [Conventions](#conventions)
+* [Custom Hooks](#custom-hooks)
+* [Using Prop Types](#using-prop-types)
+* [Custom Styling](#custom-styling)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Component Libraries
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* 💪  [AntD](https://ant.design/components)
+```
 
-### `npm test`
+## Basic usage
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` bash
+# dev server  with hot reload at http://localhost:3000
+$ npm start
+```
 
-### `npm run build`
+Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Build
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Run `build` to build the project. The build artifacts will be stored in the `build/` directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# build for production with minification
+$ npm run build
+```
 
-### `npm run eject`
+## Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+├── public/                 #static files
+│   └── index.html          #html template
+│
+├── src/                    #project root
+│   ├── assets/             #assets used in the project
+│   ├── containers/         #application layout containers
+│   ├── modules/            #modules that define the application logic
+│       ├── some-module/
+│           ├── components  #components that relate to this module
+│           ├── hooks       #custom hooks relating to the components
+│           ├── schemas     #table schemas, form validation schemas
+│   ├── scss/               #user scss/css source
+│   ├── shared/             #global components, services, hooks, utils
+│   ├── App.js              #second highest component;where routing is injected
+│   ├── configureStore.js   #creates the redux store
+│   ├── routes.js           #route declaration and lazy loading of route components
+│   ├── index.js            #highest component; where Redux is injected
+│
+└── package.json
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Conventions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `function` vs `const` method declarations
 
-## Learn More
+Use the `function` declaration for a component, a hook, a service method, etc. Use `const` for any methods on a component, in a hook, in a service etc.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```js
+function MyComponent() {
+  const handleSomething = () => {
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  }
 
-### Code Splitting
+  return (
+    ...
+  );
+}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Custom Hooks
 
-### Analyzing the Bundle Size
+Each major component should have a custom hook attached to handle any business logic. The component should only have methods that relate to display data, handling events, pushing to other routes etc. The custom hook should have all logic that is business related such as getting data, updating a data, complex computations, etc. These methods are then returned the component when it implements the hook.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Using Prop Types
 
-### Making a Progressive Web App
+PropTypes are used as a poor man's version of implementing types in JavaScript.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Each component that takes in props must make use of PropTypes `.propTypes` methods.
 
-### Advanced Configuration
+Errors will be thrown in the prototype of a prop passed in to a component doesn't match the expected type declared in the component's `.propTypes` declaration. An error means that either the prototype of the prop being passed in isn't what you thought it was or you need to adjust the declaration of the `.propTypes` on the component.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Read more on prop-types [here](https://reactjs.org/docs/typechecking-with-proptypes.html).
 
-### Deployment
+## Custom Styling
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Currently there is no form of custom styling. If we need to create a customly styled component, we'll use [styled-components](https://styled-components.com/docs/basics).
 
-### `npm run build` fails to minify
+This library allows us to create components with custom styling from HTML elements.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```js
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+```
+
+This would create a `Title` component that we could import into whichever component needed it.
+
+Custom styled components that relate to only a single module should be housed within `modules/some-module/components/styles.js`.
+
+Custom styled components that are global should be housed `shared/components/custom/styles.js`
