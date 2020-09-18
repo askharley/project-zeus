@@ -7,7 +7,7 @@ import { UserProfileModal } from '../modules/auth/components/modals';
 import { actionCreators } from '../shared/state/authStore';
 
 export default function TheHeader() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { push } = useNavigation();
   const user = useSelector((state) => state.auth.current);
   const [showUserProfileModal, setShowUserProfileModal] = useState(false);

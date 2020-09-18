@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+/**
+ * This is the highest level hook for making HTTP requests. It's just a wrapper for basic HTTP requests.
+ */
 export default function useAxios() {
   const [isLoading, setIsLoading] = useState(false);
 

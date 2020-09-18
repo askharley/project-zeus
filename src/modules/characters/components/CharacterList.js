@@ -9,6 +9,8 @@ export default function CharacterList() {
   const { push } = useNavigation();
   const { characters } = useCharacterList();
 
+  console.log(characters);
+
   const handleCharacterSelection = (data, index) => {
     push(`/characters/${Number(index) + 1}`);
   };

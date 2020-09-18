@@ -23,5 +23,5 @@ export default function UserProfileModal({ isOpen, toggle, user }) {
 UserProfileModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired  
+  user: PropTypes.object.isRequired
 }
