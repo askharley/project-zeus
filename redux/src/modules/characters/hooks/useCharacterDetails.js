@@ -11,7 +11,7 @@ export default function useCharacterDetails(id) {
   useEffect(() => {
     getCharacter(id)
       .then((res) => dispatch(actionCreators.setCharacter(res)))
-  }, []);
+  }, [getCharacter, id, dispatch]);
 
   return { isLoading, character };
 }

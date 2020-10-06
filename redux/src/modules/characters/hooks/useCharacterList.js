@@ -17,7 +17,7 @@ export default function useCharacterList() {
   useEffect(() => {
     getCharacters()
       .then((res) => dispatch(actionCreators.setCharacters(res.results)));
-  }, []);
+  }, [getCharacters, dispatch]);
 
   return { isLoading, characters };
 }
