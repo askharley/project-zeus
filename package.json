@@ -1,0 +1,31 @@
+{
+  "name": "react-admin-portal-with-state-management-templates",
+  "version": "1.0.0",
+  "scripts": {
+    "build:react-query": "npm --prefix react-query run build",
+    "build:redux": "npm --prefix redux run build"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "antd": "^4.6.6",
+    "axios": "^0.20.0",
+    "connected-react-router": "^6.8.0",
+    "dayjs": "^1.9.1",
+    "history": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-admin-portal-template-react-query": "file:react-query",
+    "react-dom": "^16.13.1",
+    "react-error-boundary": "^3.0.2",
+    "react-redux": "^7.2.1",
+    "recoil": "0.0.13",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-localstorage": "^0.4.1",
+    "underscore": "^1.11.0",
+    "use-ekko": "0.0.3"
+  },
+  "devDependencies": {
+    "react-scripts": "^3.4.3"
+  }
+}
