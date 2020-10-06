@@ -1,5 +1,5 @@
 {
-  "name": "react-admin-portal-template-redux",
+  "name": "project-zues-redux-clean",
   "version": "1.0.0",
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",

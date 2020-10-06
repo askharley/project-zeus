@@ -1,115 +1,55 @@
-# Template Admin Portal - Star Wars Edition
+# Project Zues
 
-This is a template admin portal that makes use of React, AntD, React Hooks and Redux.
+> This monorepo serves as a tool for learning as well as reference point for a couple of different things:
+> - A React folder structure that will scale with your application
+> - How to build your own reusable components that can be shared across your application
+> - How to make use of environmental variables
+> - How to implement various approaches to state management (Redux, react-query, Recoil etc)
+> - How to persist state to local storage so that it's available on the user's next visit
 
 ## Table of Contents
+* [⚡ Get Started](#get-started)
+* [📚 Projects](#projects)
+* [🤖 Deployments](#deployments)
+* [🚀 react-query](#react-query)
+* [🚀 redux-clean](#redux-clean)
 
-* [Component Libraries](#component-libraries)
-* [Basic usage](#basic-usage)
-* [Build](#build)
-* [Structure](#structure)
-* [Conventions](#conventions)
-* [Custom Hooks](#custom-hooks)
-* [Using Prop Types](#using-prop-types)
-* [Custom Styling](#custom-styling)
 
-## Component Libraries
+## ⚡ Get Started
 
-* 💪  [AntD](https://ant.design/components)
+### Clone Repo
+```
+# clone the repo
+$ git clone git@github.com:askharley/react-admin-portal-with-state-management-templates.git
+
+# navigate into the repo root
+$ cd react-admin-portal-with-state-management-templates
+
+# go into the project of your choosing
+$ cd react-query
 ```
 
-## Basic usage
+### Install
+```
+# install the dependencies
+$ npm i
 
-``` bash
-# dev server  with hot reload at http://localhost:3000
+# start the application
 $ npm start
 ```
 
-Navigate to [http://localhost:3000](http://localhost:3000). The app will automatically reload if you change any of the source files.
+## 📚 Projects
 
-## Build
+* [react-query](https://github.com/askharley/react-recoil-workshop/tree/main/start) - a demonstration on how [react-query](https://github.com/tannerlinsley/react-query) can simplify your managing of server state
+* [redux-clean](https://github.com/askharley/react-recoil-workshop/tree/main/final-redux) - a demonstration on how using libraries like [redux-actions](https://github.com/redux-utilities/redux-actions) and [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) can allow us to write cleaner and simpler Redux code without the boilerplate and pains that come with immutability
 
-Run `build` to build the project. The build artifacts will be stored in the `build/` directory.
+## 🤖 Deployments
 
-```bash
-# build for production with minification
-$ npm run build
-```
+* [react-query](https://react-recoil-workshop-start.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/react-recoil-workshop-start/deploys)
+* [redux-clean](https://react-recoil-workshop-final-redux.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/react-recoil-workshop-final-redux/deploys)
 
-## Structure
 
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
+## 🚀 react-query
 
-```
-├── public/                 #static files
-│   └── index.html          #html template
-│
-├── src/                    #project root
-│   ├── assets/             #assets used in the project
-│   ├── containers/         #application layout containers
-│   ├── modules/            #modules that define the application logic
-│       ├── some-module/
-│           ├── components  #components that relate to this module
-│           ├── hooks       #custom hooks relating to the components
-│           ├── schemas     #table schemas, form validation schemas
-│   ├── scss/               #user scss/css source
-│   ├── shared/             #global components, services, hooks, utils
-│   ├── App.js              #second highest component;where routing is injected
-│   ├── configureStore.js   #creates the redux store
-│   ├── routes.js           #route declaration and lazy loading of route components
-│   ├── index.js            #highest component; where Redux is injected
-│
-└── package.json
-```
 
-## Conventions
-
-### `function` vs `const` method declarations
-
-Use the `function` declaration for a component, a hook, a service method, etc. Use `const` for any methods on a component, in a hook, in a service etc.
-
-```js
-function MyComponent() {
-  const handleSomething = () => {
-
-  }
-
-  return (
-    ...
-  );
-}
-```
-
-### Custom Hooks
-
-Each major component should have a custom hook attached to handle any business logic. The component should only have methods that relate to display data, handling events, pushing to other routes etc. The custom hook should have all logic that is business related such as getting data, updating a data, complex computations, etc. These methods are then returned the component when it implements the hook.
-
-## Using Prop Types
-
-PropTypes are used as a poor man's version of implementing types in JavaScript.
-
-Each component that takes in props must make use of PropTypes `.propTypes` methods.
-
-Errors will be thrown in the prototype of a prop passed in to a component doesn't match the expected type declared in the component's `.propTypes` declaration. An error means that either the prototype of the prop being passed in isn't what you thought it was or you need to adjust the declaration of the `.propTypes` on the component.
-
-Read more on prop-types [here](https://reactjs.org/docs/typechecking-with-proptypes.html).
-
-## Custom Styling
-
-Currently there is no form of custom styling. If we need to create a customly styled component, we'll use [styled-components](https://styled-components.com/docs/basics).
-
-This library allows us to create components with custom styling from HTML elements.
-
-```js
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-```
-
-This would create a `Title` component that we could import into whichever component needed it.
-
-Custom styled components that relate to only a single module should be housed within `modules/some-module/components/styles.js`.
-
-Custom styled components that are global should be housed `shared/components/custom/styles.js`
+## 🚀 redux-clean

@@ -1,7 +1,7 @@
 # dependencies
 /node_modules
 /react-query/node_modules
-/redux/node_modules
+/redux-clean/node_modules
 
 # production
 /build
