@@ -1,0 +1,47 @@
+{
+  "name": "react-admin-portal-template-redux",
+  "version": "1.0.0",  
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
+    "antd": "^4.6.4",
+    "axios": "^0.20.0",
+    "connected-react-router": "^6.8.0",
+    "dayjs": "^1.8.35",
+    "history": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-localstorage": "^0.4.1",
+    "styled-components": "^5.2.0",
+    "underscore": "^1.11.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^3.4.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

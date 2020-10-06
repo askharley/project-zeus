@@ -1,25 +1,14 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
+/react-query/node_modules
+/redux/node_modules
 
 # production
 /build
+/react-query/build
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
 .vs
 .vscode
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

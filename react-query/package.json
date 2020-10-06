@@ -1,7 +1,6 @@
 {
-  "name": "template-admin-portal",
-  "version": "1.0.0",
-  "private": true,
+  "name": "react-admin-portal-template-react-query",
+  "version": "1.0.0",  
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
     "antd": "^4.6.4",
