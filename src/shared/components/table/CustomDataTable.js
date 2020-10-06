@@ -3,7 +3,7 @@ import { Table } from 'antd';
 
 export default function CustomDataTable({ schema, data, onClick }) {
   return (
-    <Table
+    <Table    
       columns={schema}
       dataSource={data}
       loading={data === null}

@@ -1,12 +1,19 @@
 import React from 'react';
+import { Spin } from 'antd';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import useCharacterDetails from '../hooks/useCharacterDetails';
 
 export default function CharacterDetails() {
   const { id } = useParams();
-  const { character } = useCharacterDetails(id);
+  const { isLoading, data } = useQuery('characterDetails', () => fetch(`https://swapi.dev/api/people/${id}`).then((res) => res.json()));
 
   return (
-    <pre>{JSON.stringify(character, null, 2)}</pre>
+    <>
+      {
+        isLoading
+          ? <Spin size='large' />
+          : <pre>{JSON.stringify(data, null, 2)}</pre>
+      }
+    </>
   );
 }

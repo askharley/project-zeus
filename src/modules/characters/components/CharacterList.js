@@ -1,15 +1,13 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 import { Typography, Card, Divider, Select } from 'antd';
 import { CustomDataTable } from '../../../shared/components/table'
 import { useNavigation } from '../../../shared/hooks';
-import useCharacterList from '../hooks/useCharacterList';
 import { listTable } from '../schemas/table';
 
 export default function CharacterList() {
   const { push } = useNavigation();
-  const { characters } = useCharacterList();
-
-  console.log(characters);
+  const { isLoading, data } = useQuery('characterList', () => fetch('https://swapi.dev/api/people/').then((res) => res.json()));
 
   const handleCharacterSelection = (data, index) => {
     push(`/characters/${Number(index) + 1}`);
@@ -17,7 +15,7 @@ export default function CharacterList() {
 
   return (
     <>
-      {characters === undefined
+      {isLoading
         ? <></>
         : <Card>
           <Typography.Title level={3}>
@@ -26,13 +24,13 @@ export default function CharacterList() {
               showSearch
               style={{ float: 'right', width: 300 }}
               placeholder='Search a character...'
-              onSelect={(data, index) => handleCharacterSelection(data, index.key)}
+              onSelect={(selected, index) => handleCharacterSelection(selected, index.key)}
             >
-              {characters.map((option, index) => <Select.Option key={index} value={option.name}>{option.name}</Select.Option>)}
+              {data?.results?.length && data?.results.map((option, index) => <Select.Option key={index} value={option.name}>{option.name}</Select.Option>)}
             </Select>
           </Typography.Title>
           <Divider />
-          <CustomDataTable schema={listTable} data={characters} onClick={handleCharacterSelection} />
+          <CustomDataTable schema={listTable} data={data.results} onClick={handleCharacterSelection} />
         </Card>}
     </>
   );
