@@ -40,13 +40,13 @@ $ npm start
 
 ## 📚 Projects
 
-* [react-query](https://github.com/askharley/react-recoil-workshop/tree/main/start) - a demonstration on how [react-query](https://github.com/tannerlinsley/react-query) can simplify your managing of server state
-* [redux-clean](https://github.com/askharley/react-recoil-workshop/tree/main/final-redux) - a demonstration on how using libraries like [redux-actions](https://github.com/redux-utilities/redux-actions) and [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) can allow us to write cleaner and simpler Redux code without the boilerplate and pains that come with immutability
+* [react-query](https://github.com/askharley/project-zues/tree/main/react-query) - a demonstration on how [react-query](https://github.com/tannerlinsley/react-query) can simplify your managing of server state
+* [redux-clean](https://github.com/askharley/project-zues/tree/main/redux-clean) - a demonstration on how using libraries like [redux-actions](https://github.com/redux-utilities/redux-actions) and [@reduxjs/toolkit](https://github.com/reduxjs/redux-toolkit) can allow us to write cleaner and simpler Redux code without the boilerplate and pains that come with immutability
 
 ## 🤖 Deployments
 
-* [react-query](https://react-recoil-workshop-start.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/react-recoil-workshop-start/deploys)
-* [redux-clean](https://react-recoil-workshop-final-redux.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/react-recoil-workshop-final-redux/deploys)
+* [react-query](https://project-zues-react-query.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/project-zues-react-query/deploys)
+* [redux-clean](https://project-zues-redux-clean.netlify.app/) - [![Netlify Status](https://api.netlify.com/api/v1/badges/71a180da-fc6f-414d-8cb8-201cb7d9e161/deploy-status)](https://app.netlify.com/sites/project-zues-react-query/deploys)
 
 
 ## 1️⃣ react-query
