@@ -20,10 +20,10 @@
 ### Clone Repo
 ```
 # clone the repo
-$ git clone git@github.com:askharley/react-admin-portal-with-state-management-templates.git
+$ git clone git@github.com:askharley/project-zeus.git
 
 # navigate into the repo root
-$ cd react-admin-portal-with-state-management-templates
+$ cd project-zeus
 
 # go into the project of your choosing
 $ cd react-query
